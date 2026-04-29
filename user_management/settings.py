@@ -36,10 +36,9 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 ALLOWED_HOSTS = [
-    "django-demo-app-cnfeddg9f0e7ckec.southindia-01.azurewebsites.net",
-    "127.0.0.1",
-    "localhost",
-    "*"
+    'usermanagement-app-bud6a5efagg5gpdn.southindia-01.azurewebsites.net',
+    # or use env var:
+    os.environ.get('WEBSITE_HOSTNAME', ''),
 ]
 
 
