@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-4350#l8@%u0gtzqai7m^viha@7hejl8@vy2ie^k#=zd9ko2pxh
 DEBUG = True
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://django-demo-app-cnfeddg9f0e7ckec.southindia-01.azurewebsites.net"
+    "https://usermanagement-app-bud6a5efagg5gpdn.southindia-01.azurewebsites.net"
 ]
 
 ALLOWED_HOSTS = [
@@ -136,7 +136,10 @@ STATIC_URL = 'static/'
 AZURE_CLIENT_ID = os.getenv('AZURE_CLIENT_ID')
 AZURE_CLIENT_SECRET = os.getenv('AZURE_CLIENT_SECRET')
 AZURE_TENANT_ID = os.getenv('AZURE_TENANT_ID')
-AZURE_REDIRECT_URI = os.getenv('AZURE_REDIRECT_URI', 'http://localhost:8000/auth/callback/')
+AZURE_REDIRECT_URI = os.getenv(
+    'AZURE_REDIRECT_URI',
+    'https://usermanagement-app-bud6a5efagg5gpdn.southindia-01.azurewebsites.net/auth/callback/'
+)
 AZURE_AUTHORITY = f"https://login.microsoftonline.com/{os.getenv('AZURE_TENANT_ID')}"
 AZURE_SCOPE = ['User.Read']
 
