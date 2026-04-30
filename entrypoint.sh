@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "Running migrations..."
+python manage.py migrate --noinput
+echo "Starting gunicorn..."
+exec gunicorn user_management.wsgi:application --bind 0.0.0.0:8000
