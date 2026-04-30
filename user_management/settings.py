@@ -145,4 +145,7 @@ AZURE_SCOPE = ['User.Read']
 
 LOGIN_URL = '/auth/login/'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/auth/login/'
+LOGOUT_REDIRECT_URL = os.getenv(
+    'LOGOUT_REDIRECT_URL',
+    'https://usermanagement-app-bud6a5efagg5gpdn.southindia-01.azurewebsites.net/auth/login/'
+)
