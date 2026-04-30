@@ -16,11 +16,19 @@ def get_msal_app():
 def ms_login(request):
     if request.session.get('user'):
         return redirect('user-list-template')
+    
+    # TEMPORARY DEBUG
+    print("REDIRECT_URI being sent:", settings.AZURE_REDIRECT_URI)
+    
     auth_url = get_msal_app().get_authorization_request_url(
         settings.AZURE_SCOPE,
         redirect_uri=settings.AZURE_REDIRECT_URI,
         state=request.session.session_key or 'state',
     )
+    
+    # TEMPORARY DEBUG - print the full auth URL
+    print("FULL AUTH URL:", auth_url)
+    
     return render(request, 'users/login.html', {'auth_url': auth_url})
 
 
