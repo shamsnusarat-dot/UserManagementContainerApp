@@ -19,3 +19,16 @@ spec:
           image: usermanagementacr.azurecr.io/django:latest
           ports:
             - containerPort: 8000
+
+          env:
+            - name: CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: django-secret
+                  key: CLIENT_SECRET
+            - name: ALLOWED_HOSTS
+              value: "74.225.28.101"
+            - name: TENANT_ID
+              value: "4c8fe92a-a25e-48a3-a0a1-e93c176068cf"
+            - name: CLIENT_ID
+              value: "a651c0d6-aa90-4a85-8b58-2e958c364b34"
