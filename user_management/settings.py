@@ -128,20 +128,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# Microsoft Entra ID (Azure AD) settings
-AZURE_CLIENT_ID = os.getenv('AZURE_CLIENT_ID')
-AZURE_CLIENT_SECRET = os.getenv('AZURE_CLIENT_SECRET')
-AZURE_TENANT_ID = os.getenv('AZURE_TENANT_ID')
-AZURE_REDIRECT_URI = os.getenv(
-    'AZURE_REDIRECT_URI',
-    'https://usermanagement-app-bud6a5efagg5gpdn.southindia-01.azurewebsites.net/auth/callback/'
-)
-AZURE_AUTHORITY = f"https://login.microsoftonline.com/{os.getenv('AZURE_TENANT_ID')}"
-AZURE_SCOPE = ['User.Read']
-
 LOGIN_URL = '/auth/login/'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = os.getenv(
-    'LOGOUT_REDIRECT_URL',
-    'https://usermanagement-app-bud6a5efagg5gpdn.southindia-01.azurewebsites.net/auth/login/'
-)
+LOGOUT_REDIRECT_URL = '/auth/login/'

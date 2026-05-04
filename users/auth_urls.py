@@ -1,8 +1,7 @@
+from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
-from .auth_views import ms_login, ms_callback, ms_logout
 
 urlpatterns = [
-    path('login/', ms_login, name='ms-login'),
-    path('callback/', ms_callback, name='ms-callback'),
-    path('logout/', ms_logout, name='ms-logout'),
+    path('login/', LoginView.as_view(template_name='users/login.html'), name='ms-login'),
+    path('logout/', LogoutView.as_view(), name='ms-logout'),
 ]
