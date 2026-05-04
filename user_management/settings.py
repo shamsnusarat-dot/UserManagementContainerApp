@@ -37,6 +37,10 @@ CSRF_TRUSTED_ORIGINS = [
 
 ALLOWED_HOSTS = [
     'usermanagement-app-bud6a5efagg5gpdn.southindia-01.azurewebsites.net',
+    '74.225.28.101',          # AKS External IP
+    'usermanagement-app.azurewebsites.net',  # App Service domain
+    'localhost',              # local dev
+    '127.0.0.1',              # local dev
     # or use env var:
     os.environ.get('WEBSITE_HOSTNAME', ''),
 ]
