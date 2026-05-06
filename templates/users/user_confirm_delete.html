@@ -10,8 +10,8 @@
                 </div>
                 <h5 class="fw-bold">Delete User</h5>
                 <p class="text-muted mb-1">You are about to delete:</p>
-                <p class="fw-semibold fs-5 mb-1">{{ user.name }}</p>
-                <p class="text-muted small mb-4">{{ user.email }}</p>
+                <p class="fw-semibold fs-5 mb-1">{{ obj.name }}</p>
+                <p class="text-muted small mb-4">{{ obj.email }}</p>
                 <p class="text-danger small mb-4">This action cannot be undone.</p>
                 <form method="post" class="d-flex justify-content-center gap-3">
                     {% csrf_token %}

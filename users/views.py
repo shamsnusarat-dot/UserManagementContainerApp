@@ -64,7 +64,7 @@ class UserCreateTemplateView(View):
 
 class UserEditTemplateView(View):
     def get(self, request, pk):
-        return render(request, 'users/user_form.html', {'user': get_object_or_404(User, pk=pk)})
+        return render(request, 'users/user_form.html', {'obj': get_object_or_404(User, pk=pk)})
 
     def post(self, request, pk):
         user = get_object_or_404(User, pk=pk)
@@ -74,12 +74,12 @@ class UserEditTemplateView(View):
             serializer.save()
             messages.success(request, 'User updated successfully.')
             return redirect('user-list-template')
-        return render(request, 'users/user_form.html', {'user': user, 'errors': serializer.errors})
+        return render(request, 'users/user_form.html', {'obj': user, 'errors': serializer.errors})
 
 
 class UserDeleteTemplateView(View):
     def get(self, request, pk):
-        return render(request, 'users/user_confirm_delete.html', {'user': get_object_or_404(User, pk=pk)})
+        return render(request, 'users/user_confirm_delete.html', {'obj': get_object_or_404(User, pk=pk)})
 
     def post(self, request, pk):
         get_object_or_404(User, pk=pk).delete()
