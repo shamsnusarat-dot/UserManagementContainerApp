@@ -35,7 +35,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://usermanagement-app-bud6a5efagg5gpdn.southindia-01.azurewebsites.net"
 ]
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 
 
